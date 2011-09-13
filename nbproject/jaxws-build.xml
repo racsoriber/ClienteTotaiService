@@ -35,5 +35,73 @@
         <delete dir="${build.generated.dir}/jax-wsCache/ServicioAbmAula"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/presentacion"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-ServicioAbmAula"/>
+    <target name="wsimport-client-ServicioAbmCurso" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServicioAbmCurso"/>
+        <property name="wsdl-ServicioAbmCurso" location="xml-resources/web-service-references/ServicioAbmCurso/wsdl/localhost_8080/ServiciosTotai/ServicioAbmCurso.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServicioAbmCurso" destdir="${build.generated.dir}/jax-wsCache/ServicioAbmCurso" wsdl="${wsdl-ServicioAbmCurso}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://localhost:8080/ServiciosTotai/ServicioAbmCurso?wsdl" xendorsed="true" package="paqueteCurso">
+            <depends file="${wsdl-ServicioAbmCurso}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServicioAbmCurso"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServicioAbmCurso">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServicioAbmCurso" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/ServicioAbmCurso"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/paqueteCurso"/>
+    </target>
+    <target name="wsimport-client-ServicioAbmEdicion" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServicioAbmEdicion"/>
+        <property name="wsdl-ServicioAbmEdicion" location="xml-resources/web-service-references/ServicioAbmEdicion/wsdl/localhost_8080/ServiciosTotai/ServicioAbmEdicion.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServicioAbmEdicion" destdir="${build.generated.dir}/jax-wsCache/ServicioAbmEdicion" wsdl="${wsdl-ServicioAbmEdicion}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://localhost:8080/ServiciosTotai/ServicioAbmEdicion?wsdl" xendorsed="true" package="paqueteEdicion">
+            <depends file="${wsdl-ServicioAbmEdicion}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServicioAbmEdicion"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServicioAbmEdicion">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServicioAbmEdicion" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/ServicioAbmEdicion"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/paqueteEdicion"/>
+    </target>
+    <target name="wsimport-client-ServicioAbmEmpleado" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServicioAbmEmpleado"/>
+        <property name="wsdl-ServicioAbmEmpleado" location="xml-resources/web-service-references/ServicioAbmEmpleado/wsdl/localhost_8080/ServiciosTotai/ServicioAbmEmpleado.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServicioAbmEmpleado" destdir="${build.generated.dir}/jax-wsCache/ServicioAbmEmpleado" wsdl="${wsdl-ServicioAbmEmpleado}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://localhost:8080/ServiciosTotai/ServicioAbmEmpleado?wsdl" xendorsed="true" package="paqueteEmpleado">
+            <depends file="${wsdl-ServicioAbmEmpleado}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServicioAbmEmpleado"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServicioAbmEmpleado">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServicioAbmEmpleado" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/ServicioAbmEmpleado"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/paqueteEmpleado"/>
+    </target>
+    <target name="wsimport-client-ServicioAbmInscripcion" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ServicioAbmInscripcion"/>
+        <property name="wsdl-ServicioAbmInscripcion" location="xml-resources/web-service-references/ServicioAbmInscripcion/wsdl/localhost_8080/ServiciosTotai/ServicioAbmInscripcion.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServicioAbmInscripcion" destdir="${build.generated.dir}/jax-wsCache/ServicioAbmInscripcion" wsdl="${wsdl-ServicioAbmInscripcion}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://localhost:8080/ServiciosTotai/ServicioAbmInscripcion?wsdl" xendorsed="true" package="paqueteInscripcion">
+            <depends file="${wsdl-ServicioAbmInscripcion}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ServicioAbmInscripcion"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ServicioAbmInscripcion">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ServicioAbmInscripcion" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/ServicioAbmInscripcion"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/paqueteInscripcion"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ServicioAbmAula, wsimport-client-ServicioAbmCurso, wsimport-client-ServicioAbmEdicion, wsimport-client-ServicioAbmEmpleado, wsimport-client-ServicioAbmInscripcion"/>
 </project>

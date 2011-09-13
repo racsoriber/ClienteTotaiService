@@ -3,4 +3,16 @@
     <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmAula?wsdl" uri="xml-resources/web-service-references/ServicioAbmAula/wsdl/localhost_8080/ServiciosTotai/ServicioAbmAula.wsdl"/>
     <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmAula?xsd=1" uri="xml-resources/web-service-references/ServicioAbmAula/wsdl/localhost_8080/ServiciosTotai/ServicioAbmAula.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmAula?xsd=2" uri="xml-resources/web-service-references/ServicioAbmAula/wsdl/localhost_8080/ServiciosTotai/ServicioAbmAula.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmCurso?wsdl" uri="xml-resources/web-service-references/ServicioAbmCurso/wsdl/localhost_8080/ServiciosTotai/ServicioAbmCurso.wsdl"/>
+    <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmCurso?xsd=1" uri="xml-resources/web-service-references/ServicioAbmCurso/wsdl/localhost_8080/ServiciosTotai/ServicioAbmCurso.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmCurso?xsd=2" uri="xml-resources/web-service-references/ServicioAbmCurso/wsdl/localhost_8080/ServiciosTotai/ServicioAbmCurso.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmEdicion?wsdl" uri="xml-resources/web-service-references/ServicioAbmEdicion/wsdl/localhost_8080/ServiciosTotai/ServicioAbmEdicion.wsdl"/>
+    <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmEdicion?xsd=1" uri="xml-resources/web-service-references/ServicioAbmEdicion/wsdl/localhost_8080/ServiciosTotai/ServicioAbmEdicion.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmEdicion?xsd=2" uri="xml-resources/web-service-references/ServicioAbmEdicion/wsdl/localhost_8080/ServiciosTotai/ServicioAbmEdicion.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmEmpleado?wsdl" uri="xml-resources/web-service-references/ServicioAbmEmpleado/wsdl/localhost_8080/ServiciosTotai/ServicioAbmEmpleado.wsdl"/>
+    <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmEmpleado?xsd=1" uri="xml-resources/web-service-references/ServicioAbmEmpleado/wsdl/localhost_8080/ServiciosTotai/ServicioAbmEmpleado.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmEmpleado?xsd=2" uri="xml-resources/web-service-references/ServicioAbmEmpleado/wsdl/localhost_8080/ServiciosTotai/ServicioAbmEmpleado.xsd_2.xsd"/>
+    <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmInscripcion?wsdl" uri="xml-resources/web-service-references/ServicioAbmInscripcion/wsdl/localhost_8080/ServiciosTotai/ServicioAbmInscripcion.wsdl"/>
+    <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmInscripcion?xsd=1" uri="xml-resources/web-service-references/ServicioAbmInscripcion/wsdl/localhost_8080/ServiciosTotai/ServicioAbmInscripcion.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ServiciosTotai/ServicioAbmInscripcion?xsd=2" uri="xml-resources/web-service-references/ServicioAbmInscripcion/wsdl/localhost_8080/ServiciosTotai/ServicioAbmInscripcion.xsd_2.xsd"/>
 </catalog>

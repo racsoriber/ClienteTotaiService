@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1-b09 (branches/2.1-6834; 2011-07-16T17:14:48+0000) JAXWS-RI/2.2.5-promoted-b04 JAXWS/2.2. --><xs:schema xmlns:tns="http://Negocio/" xmlns:ns1="http://jaxb.dev.java.net/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Negocio/">
+
+<xs:import namespace="http://jaxb.dev.java.net/array" schemaLocation="http://localhost:8080/ServiciosTotai/ServicioAbmEmpleado?xsd=1"/>
+
+<xs:element name="addEmpleado" type="tns:addEmpleado"/>
+
+<xs:element name="addEmpleadoResponse" type="tns:addEmpleadoResponse"/>
+
+<xs:element name="eliminarEmpleado" type="tns:eliminarEmpleado"/>
+
+<xs:element name="eliminarEmpleadoResponse" type="tns:eliminarEmpleadoResponse"/>
+
+<xs:element name="getEmpleados" type="tns:getEmpleados"/>
+
+<xs:element name="getEmpleadosResponse" type="tns:getEmpleadosResponse"/>
+
+<xs:element name="modificarEmpleado" type="tns:modificarEmpleado"/>
+
+<xs:element name="modificarEmpleadoResponse" type="tns:modificarEmpleadoResponse"/>
+
+<xs:complexType name="addEmpleado">
+<xs:sequence>
+<xs:element name="ci" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaIngreso" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addEmpleadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getEmpleados">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getEmpleadosResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:anyTypeArray" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarEmpleado">
+<xs:sequence>
+<xs:element name="ci" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaIngreso" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarEmpleadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarEmpleado">
+<xs:sequence>
+<xs:element name="ci" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarEmpleadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

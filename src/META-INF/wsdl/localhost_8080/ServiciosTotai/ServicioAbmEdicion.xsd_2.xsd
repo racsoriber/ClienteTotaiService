@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1-b09 (branches/2.1-6834; 2011-07-16T17:14:48+0000) JAXWS-RI/2.2.5-promoted-b04 JAXWS/2.2. --><xs:schema xmlns:tns="http://Negocio/" xmlns:ns1="http://jaxb.dev.java.net/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Negocio/">
+
+<xs:import namespace="http://jaxb.dev.java.net/array" schemaLocation="http://localhost:8080/ServiciosTotai/ServicioAbmEdicion?xsd=1"/>
+
+<xs:element name="addEdicion" type="tns:addEdicion"/>
+
+<xs:element name="addEdicionResponse" type="tns:addEdicionResponse"/>
+
+<xs:element name="delEdicion" type="tns:delEdicion"/>
+
+<xs:element name="delEdicionResponse" type="tns:delEdicionResponse"/>
+
+<xs:element name="getDiasClase" type="tns:getDiasClase"/>
+
+<xs:element name="getDiasClaseResponse" type="tns:getDiasClaseResponse"/>
+
+<xs:element name="getDocentes" type="tns:getDocentes"/>
+
+<xs:element name="getDocentesResponse" type="tns:getDocentesResponse"/>
+
+<xs:element name="getEdiciones" type="tns:getEdiciones"/>
+
+<xs:element name="getEdicionesResponse" type="tns:getEdicionesResponse"/>
+
+<xs:element name="modificarEdicion" type="tns:modificarEdicion"/>
+
+<xs:element name="modificarEdicionResponse" type="tns:modificarEdicionResponse"/>
+
+<xs:complexType name="getDocentes">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDocentesResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:anyTypeArray" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="delEdicion">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="delEdicionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addEdicion">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="cursoId" type="xs:string" minOccurs="0"/>
+<xs:element name="docenteId" type="xs:int" minOccurs="0"/>
+<xs:element name="aulaId" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaInicio" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaFin" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="diasClase" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addEdicionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDiasClase">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDiasClaseResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:anyTypeArray" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarEdicion">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="cursoId" type="xs:string" minOccurs="0"/>
+<xs:element name="docenteId" type="xs:int" minOccurs="0"/>
+<xs:element name="aulaId" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaInicio" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="fechaFin" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="diasClase" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarEdicionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getEdiciones">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getEdicionesResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:anyTypeArray" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

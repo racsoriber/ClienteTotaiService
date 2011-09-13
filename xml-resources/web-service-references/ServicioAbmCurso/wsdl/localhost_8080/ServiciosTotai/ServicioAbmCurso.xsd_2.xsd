@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1-b09 (branches/2.1-6834; 2011-07-16T17:14:48+0000) JAXWS-RI/2.2.5-promoted-b04 JAXWS/2.2. --><xs:schema xmlns:tns="http://Negocio/" xmlns:ns1="http://jaxb.dev.java.net/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Negocio/">
+
+<xs:import namespace="http://jaxb.dev.java.net/array" schemaLocation="http://localhost:8080/ServiciosTotai/ServicioAbmCurso?xsd=1"/>
+
+<xs:element name="addCurso" type="tns:addCurso"/>
+
+<xs:element name="addCursoResponse" type="tns:addCursoResponse"/>
+
+<xs:element name="delCurso" type="tns:delCurso"/>
+
+<xs:element name="delCursoResponse" type="tns:delCursoResponse"/>
+
+<xs:element name="filtrarCursos" type="tns:filtrarCursos"/>
+
+<xs:element name="filtrarCursosResponse" type="tns:filtrarCursosResponse"/>
+
+<xs:element name="getCursos" type="tns:getCursos"/>
+
+<xs:element name="getCursosResponse" type="tns:getCursosResponse"/>
+
+<xs:element name="getRequisitos" type="tns:getRequisitos"/>
+
+<xs:element name="getRequisitosResponse" type="tns:getRequisitosResponse"/>
+
+<xs:element name="modificarCurso" type="tns:modificarCurso"/>
+
+<xs:element name="modificarCursoResponse" type="tns:modificarCursoResponse"/>
+
+<xs:element name="setRequisitos" type="tns:setRequisitos"/>
+
+<xs:element name="setRequisitosResponse" type="tns:setRequisitosResponse"/>
+
+<xs:complexType name="getRequisitos">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getRequisitosResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:anyTypeArray" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setRequisitos">
+<xs:sequence>
+<xs:element name="arg0" type="tns:curso" minOccurs="0"/>
+<xs:element name="arg1" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="curso">
+<xs:sequence>
+<xs:element name="codigo" type="xs:string" minOccurs="0"/>
+<xs:element name="duracionHoras" type="xs:int" minOccurs="0"/>
+<xs:element name="tema" type="xs:string" minOccurs="0"/>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setRequisitosResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getCursos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getCursosResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:anyTypeArray" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCurso">
+<xs:sequence>
+<xs:element name="codigo" type="xs:string" minOccurs="0"/>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+<xs:element name="tema" type="xs:string" minOccurs="0"/>
+<xs:element name="hora" type="xs:int" minOccurs="0"/>
+<xs:element name="requisitos" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCursoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="delCurso">
+<xs:sequence>
+<xs:element name="codigo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="delCursoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="filtrarCursos">
+<xs:sequence>
+<xs:element name="arg0" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="filtrarCursosResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:anyTypeArray" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarCurso">
+<xs:sequence>
+<xs:element name="codigo" type="xs:string" minOccurs="0"/>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+<xs:element name="tema" type="xs:string" minOccurs="0"/>
+<xs:element name="hora" type="xs:int" minOccurs="0"/>
+<xs:element name="requisitos" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarCursoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
