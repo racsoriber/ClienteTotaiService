@@ -11,7 +11,6 @@
 package vista;
 
 import java.awt.Component;
-import java.util.Date;
 import javax.swing.DefaultListModel;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
@@ -19,11 +18,6 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.ListCellRenderer;
 import javax.swing.text.MaskFormatter;
-import negocio.ControlAula;
-import negocio.ControlCurso;
-import negocio.ControlDia;
-import negocio.ControlEdicion;
-import negocio.ControlEmpleado;
 
 /**
  *
@@ -33,7 +27,7 @@ public class AbmEdicion extends javax.swing.JPanel {
 
     private ModeloTabla modeloEdiciones = new ModeloTabla(new String[]{"id", "curso", "docente", "aula", "fechaInicio", "fechaFin"});
     private DefaultListModel modeloDiasClase = new DefaultListModel();
-    private ControlEdicion controlEdicion = new ControlEdicion();
+//    private ControlEdicion controlEdicion = new ControlEdicion();
 
     /** Creates new form AbmEdicion */
     public AbmEdicion() {
@@ -65,8 +59,6 @@ public class AbmEdicion extends javax.swing.JPanel {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-        dateInicio = new com.toedter.calendar.JDateChooser();
-        dateFin = new com.toedter.calendar.JDateChooser();
         comboDocentes = new javax.swing.JComboBox();
         comboAulas = new javax.swing.JComboBox();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -153,8 +145,6 @@ public class AbmEdicion extends javax.swing.JPanel {
                                 .add(org.jdesktop.layout.GroupLayout.LEADING, btnDelDia, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .add(org.jdesktop.layout.GroupLayout.LEADING, btnAddDia, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .add(txtId, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
-                    .add(dateInicio, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
-                    .add(dateFin, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
                     .add(comboCursos, 0, 264, Short.MAX_VALUE)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, comboDocentes, 0, 264, Short.MAX_VALUE)
                     .add(comboAulas, 0, 264, Short.MAX_VALUE))
@@ -169,17 +159,10 @@ public class AbmEdicion extends javax.swing.JPanel {
                             .add(txtId, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel1))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(jPanel1Layout.createSequentialGroup()
-                                .add(jLabel2)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .add(jLabel3)
-                                .add(22, 22, 22))
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .add(dateInicio, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(dateFin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(14, 14, 14))))
+                        .add(jLabel2)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 29, Short.MAX_VALUE)
+                        .add(jLabel3)
+                        .add(22, 22, 22))
                     .add(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(92, Short.MAX_VALUE)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
@@ -322,8 +305,6 @@ private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private javax.swing.JComboBox comboCursos;
     private javax.swing.JComboBox comboDias;
     private javax.swing.JComboBox comboDocentes;
-    private com.toedter.calendar.JDateChooser dateFin;
-    private com.toedter.calendar.JDateChooser dateInicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -349,38 +330,38 @@ private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     }
 
     private void cargarDatos() {
-        this.modeloEdiciones.setDatos(controlEdicion.getEdiciones());
+//        this.modeloEdiciones.setDatos(controlEdicion.getEdiciones());
     }
 
     private void cargarCombos() {
-        ControlAula controlAula = new ControlAula();
-        ControlDia controlDia = new ControlDia();
-        ControlCurso controlCurso = new ControlCurso();
-
-
-        this.comboAulas.removeAllItems();
-        for (Object[] item : controlAula.getAulas()) {
-            this.comboAulas.addItem(item[0]);
-        }
-        //
-        this.comboDias.removeAllItems();
-        for (Object[] item : controlDia.getDias()) {
-            this.comboDias.addItem(item[0]);
-        }
-        //
-        this.comboCursos.removeAllItems();
-        for (Object[] item : controlCurso.getCursos()) {
-            this.comboCursos.addItem(item[0]);
-        }
-        loadComboDocentes();
+//        ControlAula controlAula = new ControlAula();
+//        ControlDia controlDia = new ControlDia();
+//        ControlCurso controlCurso = new ControlCurso();
+//
+//
+//        this.comboAulas.removeAllItems();
+//        for (Object[] item : controlAula.getAulas()) {
+//            this.comboAulas.addItem(item[0]);
+//        }
+//        //
+//        this.comboDias.removeAllItems();
+//        for (Object[] item : controlDia.getDias()) {
+//            this.comboDias.addItem(item[0]);
+//        }
+//        //
+//        this.comboCursos.removeAllItems();
+//        for (Object[] item : controlCurso.getCursos()) {
+//            this.comboCursos.addItem(item[0]);
+//        }
+//        loadComboDocentes();
     }
 
     private void loadComboDocentes() {
-        this.comboDocentes.removeAllItems();
-        String edicion = this.txtId.getText();
-        for (Object[] item : controlEdicion.getDocentes(edicion)) {
-            this.comboDocentes.addItem(item);
-        }
+//        this.comboDocentes.removeAllItems();
+//        String edicion = this.txtId.getText();
+//        for (Object[] item : controlEdicion.getDocentes(edicion)) {
+//            this.comboDocentes.addItem(item);
+//        }
     }
 
     private void addDiaClase() {
@@ -398,12 +379,12 @@ private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     }
 
     private void nuevo() {
-        enableModificar(false);
-        txtId.setEditable(true);
-        this.txtId.setText("");
-        this.dateInicio.setDate(new Date());
-        this.dateFin.setDate(new Date());
-        this.modeloDiasClase.clear();
+//        enableModificar(false);
+//        txtId.setEditable(true);
+//        this.txtId.setText("");
+//        this.dateInicio.setDate(new Date());
+//        this.dateFin.setDate(new Date());
+//        this.modeloDiasClase.clear();
     }
 
     private void enableModificar(boolean enable) {
@@ -413,61 +394,61 @@ private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     }
 
     private void agregar() {
-        if (txtId.getText().isEmpty() || dateFin.getDate().before(dateInicio.getDate()) || modeloDiasClase.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Datos invalidos");
-        } else {
-            Object[] docente = (Object[]) comboDocentes.getSelectedItem();
-            Integer docenteId = (Integer) docente[0];
-            String cursoId = comboCursos.getSelectedItem().toString();
-            String aulaId = comboAulas.getSelectedItem().toString();
-            Object[] diasClase = modeloDiasClase.toArray();
-            String resultado = controlEdicion.addEdicion(this.txtId.getText(), cursoId, docenteId, aulaId, dateInicio.getDate(), dateFin.getDate(), diasClase);
-            cargarDatos();
-            JOptionPane.showMessageDialog(this, resultado);
-        }
+//        if (txtId.getText().isEmpty() || dateFin.getDate().before(dateInicio.getDate()) || modeloDiasClase.isEmpty()) {
+//            JOptionPane.showMessageDialog(this, "Datos invalidos");
+//        } else {
+//            Object[] docente = (Object[]) comboDocentes.getSelectedItem();
+//            Integer docenteId = (Integer) docente[0];
+//            String cursoId = comboCursos.getSelectedItem().toString();
+//            String aulaId = comboAulas.getSelectedItem().toString();
+//            Object[] diasClase = modeloDiasClase.toArray();
+//            String resultado = controlEdicion.addEdicion(this.txtId.getText(), cursoId, docenteId, aulaId, dateInicio.getDate(), dateFin.getDate(), diasClase);
+//            cargarDatos();
+//            JOptionPane.showMessageDialog(this, resultado);
+//        }
     }
 
     private void select() {
-        int index = tablaEdiciones.getSelectedRow();
-        if (index > -1) {
-            enableModificar(true);
-            txtId.setEditable(false);
-            txtId.setText(modeloEdiciones.getValueAt(index, 0).toString());
-            dateInicio.setDate((Date) modeloEdiciones.getValueAt(index, 4));
-            dateFin.setDate((Date) modeloEdiciones.getValueAt(index, 5));
-            comboCursos.setSelectedItem(modeloEdiciones.getValueAt(index, 1));
-            comboAulas.setSelectedItem(modeloEdiciones.getValueAt(index, 3));
-            loadComboDocentes();
-            loadDiasClase(modeloEdiciones.getValueAt(index, 0).toString());
-        }
+//        int index = tablaEdiciones.getSelectedRow();
+//        if (index > -1) {
+//            enableModificar(true);
+//            txtId.setEditable(false);
+//            txtId.setText(modeloEdiciones.getValueAt(index, 0).toString());
+//            dateInicio.setDate((Date) modeloEdiciones.getValueAt(index, 4));
+//            dateFin.setDate((Date) modeloEdiciones.getValueAt(index, 5));
+//            comboCursos.setSelectedItem(modeloEdiciones.getValueAt(index, 1));
+//            comboAulas.setSelectedItem(modeloEdiciones.getValueAt(index, 3));
+//            loadComboDocentes();
+//            loadDiasClase(modeloEdiciones.getValueAt(index, 0).toString());
+//        }
     }
 
     private void loadDiasClase(String edicion) {
-        modeloDiasClase.clear();
-        for (Object[] item : controlEdicion.getDiasClase(edicion)) {
-            modeloDiasClase.addElement(item[0]);
-        }
+//        modeloDiasClase.clear();
+//        for (Object[] item : controlEdicion.getDiasClase(edicion)) {
+//            modeloDiasClase.addElement(item[0]);
+//        }
     }
 
     private void modificar() {
-        if (dateFin.getDate().before(dateInicio.getDate()) || modeloDiasClase.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Datos invalidos");
-        } else {
-            Object[] docente = (Object[]) comboDocentes.getSelectedItem();
-            Integer docenteId = (Integer) docente[0];
-            String cursoId = comboCursos.getSelectedItem().toString();
-            String aulaId = comboAulas.getSelectedItem().toString();
-            Object[] diasClase = modeloDiasClase.toArray();
-            String resultado = controlEdicion.modificarEdicion(this.txtId.getText(), cursoId, docenteId, aulaId, dateInicio.getDate(), dateFin.getDate(), diasClase);
-            cargarDatos();
-            JOptionPane.showMessageDialog(this, resultado);
-        }
+//        if (dateFin.getDate().before(dateInicio.getDate()) || modeloDiasClase.isEmpty()) {
+//            JOptionPane.showMessageDialog(this, "Datos invalidos");
+//        } else {
+//            Object[] docente = (Object[]) comboDocentes.getSelectedItem();
+//            Integer docenteId = (Integer) docente[0];
+//            String cursoId = comboCursos.getSelectedItem().toString();
+//            String aulaId = comboAulas.getSelectedItem().toString();
+//            Object[] diasClase = modeloDiasClase.toArray();
+//            String resultado = controlEdicion.modificarEdicion(this.txtId.getText(), cursoId, docenteId, aulaId, dateInicio.getDate(), dateFin.getDate(), diasClase);
+//            cargarDatos();
+//            JOptionPane.showMessageDialog(this, resultado);
+//        }
     }
 
     private void eliminar() {
-        String resultado = controlEdicion.delEdicion(this.txtId.getText());
-        cargarDatos();
-        JOptionPane.showMessageDialog(this, resultado);
+//        String resultado = controlEdicion.delEdicion(this.txtId.getText());
+//        cargarDatos();
+//        JOptionPane.showMessageDialog(this, resultado);
     }
 
     private class DocenteComboRenderer extends JLabel implements ListCellRenderer {

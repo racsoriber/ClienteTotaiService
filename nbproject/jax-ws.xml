@@ -117,7 +117,7 @@
     <client name="ServicioAbmInscripcion">
       <wsdl-url>http://localhost:8080/ServiciosTotai/ServicioAbmInscripcion?wsdl</wsdl-url>
       <local-wsdl-file>localhost_8080/ServiciosTotai/ServicioAbmInscripcion.wsdl</local-wsdl-file>
-      <package-name forceReplace="true">paqueteInscripcion</package-name>
+      <package-name forceReplace="true">incsripcion</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -138,7 +138,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>package</wsimport-option-name>
-          <wsimport-option-value>paqueteInscripcion</wsimport-option-value>
+          <wsimport-option-value>incsripcion</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

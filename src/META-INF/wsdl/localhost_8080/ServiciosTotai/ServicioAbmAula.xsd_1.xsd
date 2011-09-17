@@ -1,8 +1,66 @@
-<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1-b09 (branches/2.1-6834; 2011-07-16T17:14:48+0000) JAXWS-RI/2.2.5-promoted-b04 JAXWS/2.2. --><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://jaxb.dev.java.net/array">
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.1.1-b09 (branches/2.1-6834; 2011-07-16T17:14:48+0000) JAXWS-RI/2.2.5-promoted-b04 JAXWS/2.2. --><xs:schema xmlns:tns="http://Negocio/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Negocio/">
 
-<xs:complexType name="anyTypeArray" final="#all">
+<xs:element name="addAula" type="tns:addAula"/>
+
+<xs:element name="addAulaResponse" type="tns:addAulaResponse"/>
+
+<xs:element name="delAula" type="tns:delAula"/>
+
+<xs:element name="delAulaResponse" type="tns:delAulaResponse"/>
+
+<xs:element name="getAulas" type="tns:getAulas"/>
+
+<xs:element name="getAulasResponse" type="tns:getAulasResponse"/>
+
+<xs:element name="modificarAula" type="tns:modificarAula"/>
+
+<xs:element name="modificarAulaResponse" type="tns:modificarAulaResponse"/>
+
+<xs:complexType name="modificarAula">
 <xs:sequence>
-<xs:element name="item" type="xs:anyType" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="capacidad" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarAulaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAulas">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAulasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addAula">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="capacidad" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addAulaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="delAula">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="delAulaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

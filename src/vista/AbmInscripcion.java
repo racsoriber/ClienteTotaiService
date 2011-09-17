@@ -10,17 +10,17 @@
  */
 package vista;
 
+import incsripcion.ServicioAbmInscripcion;
+import incsripcion.ServicioAbmInscripcion_Service;
 import java.awt.Component;
-import java.util.Date;
-import java.util.List;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.ListCellRenderer;
 import javax.swing.text.MaskFormatter;
-import negocio.ControlEdicion;
-import negocio.ControlInscripcion;
+import javax.xml.bind.annotation.XmlAccessOrder;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  *
@@ -30,7 +30,8 @@ public class AbmInscripcion extends javax.swing.JPanel {
 
     /** Creates new form AbmInscripcion */
     private ModeloTabla modeloInscripcion = new ModeloTabla(new String[]{"Edicion", "Alumno", "FechaInscripcion", "Nota"});
-    private ControlInscripcion controlInscripcion = new ControlInscripcion();
+
+    private ServicioAbmInscripcion controlInscripcion = new ServicioAbmInscripcion_Service().getServicioAbmInscripcionPort();
 
     public AbmInscripcion() {
         initComponents();
@@ -257,7 +258,7 @@ public class AbmInscripcion extends javax.swing.JPanel {
         String edicion = comboEdicion.getSelectedItem().toString();
         Object[] alumno = (Object[]) comboAlumnos.getSelectedItem();
         Integer alumnoId = Integer.parseInt(alumno[0].toString());
-        String resultado = controlInscripcion.addInscripcion(edicion, alumnoId, new Date(), 0);
+        String resultado = controlInscripcion.addInscripcion(edicion, alumnoId,null, 0);
         comboEdicion.setSelectedItem("");
         comboAlumnos.setEnabled(false);
         cargarDatos();
@@ -265,23 +266,23 @@ public class AbmInscripcion extends javax.swing.JPanel {
     }
 
     private void loadEdiciones() {
-        this.comboEdicion.removeAllItems();
-        ControlEdicion controlEdicion = new ControlEdicion();
-
-        List<Object[]> ediciones = controlEdicion.getEdiciones();
-        this.comboEdicion.addItem("");
-        for (Object[] item : ediciones) {
-            this.comboEdicion.addItem(item[0]);
-        }
+//        this.comboEdicion.removeAllItems();
+//        ControlEdicion controlEdicion = new ControlEdicion();
+//
+//        List<Object[]> ediciones = controlEdicion.getEdiciones();
+//        this.comboEdicion.addItem("");
+//        for (Object[] item : ediciones) {
+//            this.comboEdicion.addItem(item[0]);
+//        }
     }
 // Carga los alumnos no inscritos en una deteminada edcion
 
     private void loadAlumnosNoIscritos(String edicion) {
-        this.comboAlumnos.removeAllItems();
-        List<Object[]> alumNoInscritos = controlInscripcion.getNoInscritos(edicion);
-        for (Object[] item : alumNoInscritos) {
-            this.comboAlumnos.addItem(item);
-        }
+//        this.comboAlumnos.removeAllItems();
+//        List<Object[]> alumNoInscritos = controlInscripcion.getNoInscritos(edicion);
+//        for (Object[] item : alumNoInscritos) {
+//            this.comboAlumnos.addItem(item);
+//        }
     }
 
     private void init() {
@@ -301,9 +302,9 @@ public class AbmInscripcion extends javax.swing.JPanel {
     }
 
     private void cargarDatos() {
-        String edicion = comboEdicion.getSelectedItem() + "";
-        this.modeloInscripcion.setDatos(controlInscripcion.getInscripciones(edicion));
-        loadAlumnosNoIscritos(edicion);
+//        String edicion = comboEdicion.getSelectedItem() + "";
+//        this.modeloInscripcion.setDatos(controlInscripcion.getInscripciones(edicion));
+//        loadAlumnosNoIscritos(edicion);
     }
 
     private void nuevo() {
@@ -340,26 +341,26 @@ public class AbmInscripcion extends javax.swing.JPanel {
     }
 
     private void modificar() {
-        String edicion = comboEdicion.getSelectedItem().toString();
-        Object[] alumno = (Object[]) comboAlumnos.getSelectedItem();
-        Integer alumnoId = Integer.parseInt(alumno[0].toString());
-        Integer nota = Integer.parseInt(txtNota.getText().trim());
-        String resultado = controlInscripcion.modificarInscripcion(edicion, alumnoId, nota);
-        comboEdicion.setSelectedItem("");
-        comboAlumnos.setEnabled(false);
-        cargarDatos();
-        JOptionPane.showMessageDialog(this, resultado);
+//        String edicion = comboEdicion.getSelectedItem().toString();
+//        Object[] alumno = (Object[]) comboAlumnos.getSelectedItem();
+//        Integer alumnoId = Integer.parseInt(alumno[0].toString());
+//        Integer nota = Integer.parseInt(txtNota.getText().trim());
+//        String resultado = controlInscripcion.modificarInscripcion(edicion, alumnoId, nota);
+//        comboEdicion.setSelectedItem("");
+//        comboAlumnos.setEnabled(false);
+//        cargarDatos();
+//        JOptionPane.showMessageDialog(this, resultado);
     }
 
     private void delInscripcion() {
-        String edicion = comboEdicion.getSelectedItem().toString();
-        Object[] alumno = (Object[]) comboAlumnos.getSelectedItem();
-        Integer alumnoId = Integer.parseInt(alumno[0].toString());
-        String resultado = controlInscripcion.delInscripcion(edicion, alumnoId);
-        comboEdicion.setSelectedItem("");
-        comboAlumnos.setEnabled(false);
-        cargarDatos();
-        JOptionPane.showMessageDialog(this, resultado);
+//        String edicion = comboEdicion.getSelectedItem().toString();
+//        Object[] alumno = (Object[]) comboAlumnos.getSelectedItem();
+//        Integer alumnoId = Integer.parseInt(alumno[0].toString());
+//        String resultado = controlInscripcion.delInscripcion(edicion, alumnoId);
+//        comboEdicion.setSelectedItem("");
+//        comboAlumnos.setEnabled(false);
+//        cargarDatos();
+//        JOptionPane.showMessageDialog(this, resultado);
     }
 
     private class AlumnoRenderer extends JLabel implements ListCellRenderer {

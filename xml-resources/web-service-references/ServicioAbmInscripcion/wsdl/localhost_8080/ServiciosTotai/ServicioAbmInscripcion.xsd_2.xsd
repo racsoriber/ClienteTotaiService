@@ -42,36 +42,13 @@
 
 <xs:complexType name="getInscripciones">
 <xs:sequence>
-<xs:element name="arg0" type="tns:empleado" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="empleado">
-<xs:sequence>
-<xs:element name="ci" type="xs:int" minOccurs="0"/>
-<xs:element name="fechaIngreso" type="xs:dateTime" minOccurs="0"/>
-<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="getInscripcionesResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:inscripcion" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="inscripcion">
-<xs:sequence>
-<xs:element name="fechaInscripcion" type="xs:dateTime" minOccurs="0"/>
-<xs:element name="inscripcionPK" type="tns:inscripcionPK" minOccurs="0"/>
-<xs:element name="nota" type="xs:int" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="inscripcionPK">
-<xs:sequence>
-<xs:element name="idAlumno" type="xs:int" minOccurs="0"/>
-<xs:element name="idEdicion" type="xs:string" minOccurs="0"/>
+<xs:element name="return" type="ns1:anyTypeArray" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -90,6 +67,14 @@
 <xs:complexType name="eliminarByEmpleado">
 <xs:sequence>
 <xs:element name="arg0" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="empleado">
+<xs:sequence>
+<xs:element name="ci" type="xs:int" minOccurs="0"/>
+<xs:element name="fechaIngreso" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

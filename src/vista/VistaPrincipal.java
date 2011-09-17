@@ -141,7 +141,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 private void menuItemCursosActionPerformed(ActionEvent evt) {//GEN-FIRST:event_menuItemCursosActionPerformed
-    //addTabCurso();
+    addTabCurso();
 }//GEN-LAST:event_menuItemCursosActionPerformed
 
 private void menuItemAulasActionPerformed(ActionEvent evt) {//GEN-FIRST:event_menuItemAulasActionPerformed
@@ -217,8 +217,8 @@ private void menuItemInscripcionActionPerformed(ActionEvent evt) {//GEN-FIRST:ev
     // End of variables declaration//GEN-END:variables
 
     private void addTabCurso() {
-        //AbmCurso tabCurso = new AbmCurso();
-        //this.tabPanel.addTab("Cursos", new JScrollPane(tabCurso));
+        AbmCurso tabCurso = new AbmCurso();
+        this.tabPanel.addTab("Cursos", new JScrollPane(tabCurso));
     }
 
     private void addTabAulas() {

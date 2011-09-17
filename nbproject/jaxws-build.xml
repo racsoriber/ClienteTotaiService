@@ -89,7 +89,7 @@
     <target name="wsimport-client-ServicioAbmInscripcion" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/ServicioAbmInscripcion"/>
         <property name="wsdl-ServicioAbmInscripcion" location="xml-resources/web-service-references/ServicioAbmInscripcion/wsdl/localhost_8080/ServiciosTotai/ServicioAbmInscripcion.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServicioAbmInscripcion" destdir="${build.generated.dir}/jax-wsCache/ServicioAbmInscripcion" wsdl="${wsdl-ServicioAbmInscripcion}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://localhost:8080/ServiciosTotai/ServicioAbmInscripcion?wsdl" xendorsed="true" package="paqueteInscripcion">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ServicioAbmInscripcion" destdir="${build.generated.dir}/jax-wsCache/ServicioAbmInscripcion" wsdl="${wsdl-ServicioAbmInscripcion}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://localhost:8080/ServiciosTotai/ServicioAbmInscripcion?wsdl" xendorsed="true" package="incsripcion">
             <depends file="${wsdl-ServicioAbmInscripcion}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/ServicioAbmInscripcion"/>
         </wsimport>
@@ -101,7 +101,7 @@
     </target>
     <target name="wsimport-client-clean-ServicioAbmInscripcion" depends="-init-project">
         <delete dir="${build.generated.dir}/jax-wsCache/ServicioAbmInscripcion"/>
-        <delete dir="${build.generated.sources.dir}/jax-ws/paqueteInscripcion"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/incsripcion"/>
     </target>
     <target name="wsimport-client-generate" depends="wsimport-client-ServicioAbmAula, wsimport-client-ServicioAbmCurso, wsimport-client-ServicioAbmEdicion, wsimport-client-ServicioAbmEmpleado, wsimport-client-ServicioAbmInscripcion"/>
 </project>

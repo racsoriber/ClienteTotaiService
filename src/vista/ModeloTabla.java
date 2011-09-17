@@ -7,6 +7,7 @@ package vista;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
+import presentacion.AnyTypeArray;
 
 /**
  *
@@ -61,4 +62,5 @@ public class ModeloTabla extends AbstractTableModel {
     public Object[] getRow(int indexFila) {
         return this.datos.get(indexFila); 
     }
+
 }

@@ -37,12 +37,6 @@
 <message name="getInscripcionesResponse">
 <part name="parameters" element="tns:getInscripcionesResponse"/>
 </message>
-<message name="getInscripciones">
-<part name="parameters" element="tns:getInscripciones"/>
-</message>
-<message name="getInscripcionesResponse">
-<part name="parameters" element="tns:getInscripcionesResponse"/>
-</message>
 <message name="getNoInscritos">
 <part name="parameters" element="tns:getNoInscritos"/>
 </message>
@@ -65,10 +59,6 @@
 <operation name="eliminarByEmpleado">
 <input wsam:Action="http://Negocio/ServicioAbmInscripcion/eliminarByEmpleadoRequest" message="tns:eliminarByEmpleado"/>
 <output wsam:Action="http://Negocio/ServicioAbmInscripcion/eliminarByEmpleadoResponse" message="tns:eliminarByEmpleadoResponse"/>
-</operation>
-<operation name="getInscripciones">
-<input wsam:Action="http://Negocio/ServicioAbmInscripcion/getInscripcionesRequest" message="tns:getInscripciones"/>
-<output wsam:Action="http://Negocio/ServicioAbmInscripcion/getInscripcionesResponse" message="tns:getInscripcionesResponse"/>
 </operation>
 <operation name="getInscripciones">
 <input wsam:Action="http://Negocio/ServicioAbmInscripcion/getInscripcionesRequest" message="tns:getInscripciones"/>
@@ -109,15 +99,6 @@
 </output>
 </operation>
 <operation name="eliminarByEmpleado">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getInscripciones">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

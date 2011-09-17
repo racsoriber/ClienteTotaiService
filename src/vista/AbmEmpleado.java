@@ -14,7 +14,6 @@ import java.util.Date;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.text.MaskFormatter;
-import negocio.ControlEmpleado;
 
 /**
  *
@@ -23,7 +22,7 @@ import negocio.ControlEmpleado;
 public class AbmEmpleado extends javax.swing.JPanel {
 
     private ModeloTabla modeloEmpleados = new ModeloTabla(new String[]{"CI", "Nombre", "Fecha Ingreso"});
-    private ControlEmpleado controlEmpleado = new ControlEmpleado();
+//    private ControlEmpleado controlEmpleado = new ControlEmpleado();
 
     /** Creates new form AbmEmpleado */
     public AbmEmpleado() {
@@ -52,7 +51,6 @@ public class AbmEmpleado extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
         txtNombre = new javax.swing.JTextField();
-        dateIngreso = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaEmpleados = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
@@ -81,7 +79,6 @@ public class AbmEmpleado extends javax.swing.JPanel {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(dateIngreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtNombre)
                     .addComponent(txtCi, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(91, Short.MAX_VALUE))
@@ -98,10 +95,8 @@ public class AbmEmpleado extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(dateIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel3)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         tablaEmpleados.setModel(new javax.swing.table.DefaultTableModel(
@@ -204,7 +199,6 @@ public class AbmEmpleado extends javax.swing.JPanel {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnNuevo;
-    private com.toedter.calendar.JDateChooser dateIngreso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -222,15 +216,15 @@ public class AbmEmpleado extends javax.swing.JPanel {
     }
 
     private void cargarDatos() {
-        this.modeloEmpleados.setDatos(controlEmpleado.getEmpleados());
+//        this.modeloEmpleados.setDatos(controlEmpleado.getEmpleados());
     }
 
     private void crearNuevo() {
-        this.txtCi.setEditable(true);
-        this.txtCi.setText("");
-        this.txtNombre.setText("");
-        this.dateIngreso.setDate(new Date());
-        enableModificar(false);
+//        this.txtCi.setEditable(true);
+//        this.txtCi.setText("");
+//        this.txtNombre.setText("");
+//        this.dateIngreso.setDate(new Date());
+//        enableModificar(false);
     }
 
     private void enableModificar(boolean enable) {
@@ -244,9 +238,9 @@ public class AbmEmpleado extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Datos invalidos");
         } else {
             Integer ci = Integer.parseInt(txtCi.getValue().toString());
-            String resultado = controlEmpleado.addEmpleado(ci, txtNombre.getText(), dateIngreso.getDate());
-            cargarDatos();
-            JOptionPane.showMessageDialog(this, resultado);
+//            String resultado = controlEmpleado.addEmpleado(ci, txtNombre.getText(), dateIngreso.getDate());
+//            cargarDatos();
+//            JOptionPane.showMessageDialog(this, resultado);
         }
     }
 
@@ -257,7 +251,7 @@ public class AbmEmpleado extends javax.swing.JPanel {
             enableModificar(true);
             this.txtCi.setText(modeloEmpleados.getValueAt(index, 0).toString());
             this.txtNombre.setText(modeloEmpleados.getValueAt(index, 1).toString());
-            this.dateIngreso.setDate((Date) modeloEmpleados.getValueAt(index, 2));
+//             this.dateIngreso.setDate((Date) modeloEmpleados.getValueAt(index, 2));
         }
     }
 
@@ -266,9 +260,9 @@ public class AbmEmpleado extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Datos invalidos");
         } else {
             Integer ci = Integer.parseInt(txtCi.getValue().toString());
-            String resultado = controlEmpleado.modificarEmpleado(ci,txtNombre.getText(), dateIngreso.getDate());
-            cargarDatos();
-            JOptionPane.showMessageDialog(this, resultado);
+//            String resultado = controlEmpleado.modificarEmpleado(ci,txtNombre.getText(), dateIngreso.getDate());
+//            cargarDatos();
+//            JOptionPane.showMessageDialog(this, resultado);
         }
     }
 
@@ -276,9 +270,9 @@ public class AbmEmpleado extends javax.swing.JPanel {
         int index = tablaEmpleados.getSelectedRow();
         if (index > -1) {
             Integer ci = Integer.parseInt(modeloEmpleados.getValueAt(index, 0).toString());
-            String resultado = controlEmpleado.eliminarEmpleado(ci);
-            cargarDatos();
-            JOptionPane.showMessageDialog(this, resultado);
+//            String resultado = controlEmpleado.eliminarEmpleado(ci);
+//            cargarDatos();
+//            JOptionPane.showMessageDialog(this, resultado);
         }
     }
 }

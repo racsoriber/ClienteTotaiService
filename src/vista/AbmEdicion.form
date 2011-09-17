@@ -78,8 +78,6 @@
                           </Group>
                       </Group>
                       <Component id="txtId" alignment="0" pref="264" max="32767" attributes="1"/>
-                      <Component id="dateInicio" alignment="0" pref="264" max="32767" attributes="1"/>
-                      <Component id="dateFin" alignment="0" pref="264" max="32767" attributes="1"/>
                       <Component id="comboCursos" alignment="0" pref="264" max="32767" attributes="0"/>
                       <Component id="comboDocentes" alignment="1" pref="264" max="32767" attributes="1"/>
                       <Component id="comboAulas" alignment="0" pref="264" max="32767" attributes="1"/>
@@ -98,20 +96,10 @@
                               <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" attributes="1">
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="dateInicio" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="dateFin" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="29" max="32767" attributes="0"/>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace pref="92" max="32767" attributes="0"/>
@@ -188,10 +176,6 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try {&#xa;   MaskFormatter formatter = new MaskFormatter(&quot;##-####&quot;);&#xa;   this.txtId = new JFormattedTextField(formatter);&#xa;} catch (Exception e) {&#xa;   JOptionPane.showMessageDialog(this, e.getMessage());&#xa;}"/>
           </AuxValues>
-        </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="dateInicio">
-        </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="dateFin">
         </Component>
         <Component class="javax.swing.JComboBox" name="comboDocentes">
           <Properties>

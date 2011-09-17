@@ -10,9 +10,12 @@
  */
 package vista;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.text.MaskFormatter;
+import presentacion.AnyTypeArray;
 import presentacion.ServicioAbmAula;
 import presentacion.ServicioAbmAula_Service;
 
@@ -25,13 +28,12 @@ public class AbmAula extends javax.swing.JPanel {
     private ModeloTabla modeloAulas = new ModeloTabla(new String[]{"id", "capacidad"});
     //private ControlAula controlAula = new ControlAula();
     private ServicioAbmAula servicioAula = new ServicioAbmAula_Service().getServicioAbmAulaPort();
-    
-    
+
     public AbmAula() {
         initComponents();
         init();
-        
-        
+
+
     }
 
     /** This method is called from within the constructor to
@@ -214,7 +216,13 @@ public class AbmAula extends javax.swing.JPanel {
     }
 
     private void cargarDatos() {
-        // this.modeloAulas.setDatos(controlAula.getAulas());
+        List<String> list = servicioAula.getAulas();
+        List<Object[]> data = new ArrayList<Object[]>();
+        for (String csv : list) {
+            String[] array = csv.split(",");
+            data.add(new Object[]{array[0], array[1]});
+        }
+        this.modeloAulas.setDatos(data);
     }
 
     private void crearNuevo() {
@@ -222,7 +230,7 @@ public class AbmAula extends javax.swing.JPanel {
         this.txtId.setText("");
         this.spinCapacidad.setValue(25);
         enableModificar(false);
-       
+
     }
 
     private void addAula() {

@@ -13,8 +13,9 @@ package vista;
 import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import paqueteCurso.ServicioAbmCurso;
+import paqueteCurso.ServicioAbmCurso_Service;
 import vista.ModeloTabla;
-import paqueteCurso.*;
 
 /**
  *
@@ -24,7 +25,7 @@ public class AbmCurso extends javax.swing.JPanel {
 
     private ModeloTabla modeloCursos = new ModeloTabla(new String[]{"codigo", "titulo", "tema", "horas"});
     private DefaultListModel modeloRequisitos = new DefaultListModel();
-    private ServicioAbmCurso controlCurso = new ServicioAbmCurso_Service().getServicioAbmCursoPort();
+//    private ServicioAbmCurso controlCurso = new ServicioAbmCurso_Service().getServicioAbmCursoPort();
 
     /** Creates new form AbmCurso */
     public AbmCurso() {
@@ -341,7 +342,7 @@ private void comboCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     }
 
     private void cargarDatos() {
-        this.modeloCursos.setDatos(controlCurso.getCursos());
+//        this.modeloCursos.setDatos(controlCurso.getCursos());
     }
 
     private void addCurso() {
@@ -350,9 +351,9 @@ private void comboCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         if (codigo.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Campo Codigo no debe estar vacio");
         } else {
-            String resultado = controlCurso.addCurso(codigo, txtTitulo.getText(), txtTema.getText(), horas, modeloRequisitos.toArray());
+//            String resultado = controlCurso.addCurso(codigo, txtTitulo.getText(), txtTema.getText(), horas, modeloRequisitos.toArray());
             cargarDatos();
-            JOptionPane.showMessageDialog(this, resultado);
+//            JOptionPane.showMessageDialog(this, resultado);
         }
         btnModificar.setEnabled(false);
         btnAgregar.setEnabled(true);
@@ -396,9 +397,9 @@ private void comboCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         if (codigo.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Campo Codigo no debe estar vacio");
         } else {
-            String resultado = controlCurso.modificarCurso(codigo, txtTitulo.getText(), txtTema.getText(), horas, modeloRequisitos.toArray());
+//            String resultado = controlCurso.modificarCurso(codigo, txtTitulo.getText(), txtTema.getText(), horas, modeloRequisitos.toArray());
             cargarDatos();
-            JOptionPane.showMessageDialog(this, resultado);
+//            JOptionPane.showMessageDialog(this, resultado);
         }
     }
 
@@ -407,31 +408,31 @@ private void comboCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         if (codigo.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Campo Codigo no debe estar vacio ");
         } else {
-            String resultado = controlCurso.delCurso(codigo);
+//            String resultado = controlCurso.delCurso(codigo);
             cargarDatos();
-            JOptionPane.showMessageDialog(this, resultado);
+//            JOptionPane.showMessageDialog(this, resultado);
         }
     }
 
     private void loadRequisitos() {
         this.comboCursos.removeAllItems();
         this.modeloRequisitos.clear();
-        List<Object[]> requisitos = controlCurso.getRequisitos(txtCodigo.getText());
+//        List<Object[]> requisitos = controlCurso.getRequisitos(txtCodigo.getText());
 
         boolean isModificacion = !this.txtCodigo.getText().isEmpty();
         if (isModificacion) {
             this.modeloRequisitos.addElement(this.txtCodigo.getText());
         }
 
-        for (Object[] item : requisitos) {
-            this.modeloRequisitos.addElement(item[0]);
-        }
+//        for (Object[] item : requisitos) {
+//            this.modeloRequisitos.addElement(item[0]);
+//        }
 
-        Object[] codigosExistentes = modeloRequisitos.toArray();
-        List<Object[]> cursosDisponibles = controlCurso.filtrarCursos(codigosExistentes);
-        for (Object[] item : cursosDisponibles) {
-            this.comboCursos.addItem(item[0]);
-        }
+//        Object[] codigosExistentes = modeloRequisitos.toArray();
+//        List<Object[]> cursosDisponibles = controlCurso.filtrarCursos(codigosExistentes);
+//        for (Object[] item : cursosDisponibles) {
+//            this.comboCursos.addItem(item[0]);
+//        }
         if (isModificacion) {
             this.modeloRequisitos.removeElement(this.txtCodigo.getText());
         }
