@@ -15,7 +15,6 @@ import java.util.List;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.text.MaskFormatter;
-import presentacion.AnyTypeArray;
 import presentacion.ServicioAbmAula;
 import presentacion.ServicioAbmAula_Service;
 

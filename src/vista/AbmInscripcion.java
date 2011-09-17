@@ -13,6 +13,8 @@ package vista;
 import incsripcion.ServicioAbmInscripcion;
 import incsripcion.ServicioAbmInscripcion_Service;
 import java.awt.Component;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -20,6 +22,7 @@ import javax.swing.JOptionPane;
 import javax.swing.ListCellRenderer;
 import javax.swing.text.MaskFormatter;
 import javax.xml.bind.annotation.XmlAccessOrder;
+import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
@@ -30,7 +33,6 @@ public class AbmInscripcion extends javax.swing.JPanel {
 
     /** Creates new form AbmInscripcion */
     private ModeloTabla modeloInscripcion = new ModeloTabla(new String[]{"Edicion", "Alumno", "FechaInscripcion", "Nota"});
-
     private ServicioAbmInscripcion controlInscripcion = new ServicioAbmInscripcion_Service().getServicioAbmInscripcionPort();
 
     public AbmInscripcion() {
@@ -234,7 +236,6 @@ public class AbmInscripcion extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         selectEdicion();
     }//GEN-LAST:event_jButton1ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnEliminar;
@@ -255,14 +256,21 @@ public class AbmInscripcion extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void addInscripcion() {
+
         String edicion = comboEdicion.getSelectedItem().toString();
         Object[] alumno = (Object[]) comboAlumnos.getSelectedItem();
         Integer alumnoId = Integer.parseInt(alumno[0].toString());
-        String resultado = controlInscripcion.addInscripcion(edicion, alumnoId,null, 0);
-        comboEdicion.setSelectedItem("");
-        comboAlumnos.setEnabled(false);
-        cargarDatos();
-        JOptionPane.showMessageDialog(this, resultado);
+        try {
+            GregorianCalendar cal = new GregorianCalendar();
+            cal.setTime(new Date());
+            XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);
+            String resultado = controlInscripcion.addInscripcion(edicion, alumnoId, date2, 0);
+            comboEdicion.setSelectedItem("");
+            comboAlumnos.setEnabled(false);
+            JOptionPane.showMessageDialog(this, resultado);
+        } catch (Exception e) {
+        }
+        cargarDatos();        
     }
 
     private void loadEdiciones() {
@@ -290,7 +298,7 @@ public class AbmInscripcion extends javax.swing.JPanel {
         this.comboAlumnos.removeAllItems();
         this.tablaInscripciones.setModel(modeloInscripcion);
         loadEdiciones();
-        cargarDatos();        
+        cargarDatos();
     }
 
     private void selectEdicion() {
@@ -332,7 +340,7 @@ public class AbmInscripcion extends javax.swing.JPanel {
 
     private void selectAlumno(Integer idAlumno) {
         for (int i = 0; i < comboAlumnos.getItemCount(); i++) {
-            Object[] alumno = (Object[]) comboAlumnos.getItemAt(i);            
+            Object[] alumno = (Object[]) comboAlumnos.getItemAt(i);
             if (idAlumno.toString().equals(alumno[0].toString())) {
                 this.comboAlumnos.setSelectedIndex(i);
                 break;
